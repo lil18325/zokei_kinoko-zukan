@@ -1,0 +1,151 @@
+/* detail-01.css */
+
+body {
+    background-image: url('images/back.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: 'Hiragino Sans', 'メイリオ', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 白い枠の設定 */
+.detail-container {
+    max-width: 900px;
+    margin: 60px auto 20px; /* 下側のマージンを減らし、ボタンを近くに配置 */
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 50px 60px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+/* 枠の外のボタンエリア */
+.outer-nav-wrapper {
+    max-width: 1000px;
+    margin: 0 auto; /* 白い枠と幅を合わせる */
+    text-align: left;    /* 左寄せ */
+    padding-top: 20px;
+}
+
+.back-link {
+    color: #008000;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0;
+    border-radius: 4px;
+    transition: background-color 0.2s;
+}
+
+.back-link:hover {
+    color: #006400; 
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9), -1px -1px 3px rgba(255, 255, 255, 0.9);
+}
+
+/* 1段目：名前 */
+.detail-header-row {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.detail-header-row h1 {
+    font-size: 2.5em;
+    margin: 0;
+    color: #008000;
+}
+
+/* 2段目：レイアウト */
+.detail-main-flex {
+    display: flex;
+    gap: 60px;
+    align-items: flex-start;
+}
+
+.info-column { flex: 1; }
+
+.image-column {
+    width: 220px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.image-column img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* 情報テーブル */
+.spec-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 40px;
+}
+.spec-table th, .spec-table td {
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+    font-size: 1rem;
+}
+.spec-table th {
+    width: 80px;
+    font-weight: bold;
+}
+
+/* 特徴テキスト */
+.feature-text h3 {
+    font-size: 1.3em;
+    color: #008000;
+    margin-bottom: 15px;
+    border-bottom: none; /* ★下線を削除 */
+}
+
+/* めもエリアの間隔調整 */
+.memo-area {
+    margin-top: 50px; /* ★上との間隔をさらに広げました */
+}
+
+.memo-area p {
+    font-size: 1rem;
+    margin-bottom: 12px;
+}
+
+/* 食用タグ */
+.edible-tag {
+    font-weight: bold; 
+    font-size: 0.9em; 
+    padding: 3px 10px; 
+    border-radius: 3px;
+    color: white;
+}
+.tag-食 { background-color: #27ae60; }
+
+/* フッター (index.htmlと共通) */
+.footer-separator {
+    width: 100%;
+    margin: 0 auto; 
+    line-height: 0;
+}
+.shadow-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+    font-size: 0.9em;
+}
+
+/* スマホ対応 */
+@media (max-width: 750px) {
+    .detail-container, .outer-nav-wrapper { margin: 20px; max-width: none; }
+    .detail-main-flex { flex-direction: column; }
+    .image-column { width: 100%; flex-direction: row; }
+    .image-column img { width: calc(50% - 10px); }
+}
+

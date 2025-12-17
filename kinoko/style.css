@@ -1,0 +1,506 @@
+/* ==================================== */
+/* 1. 全体とレイアウトの基本設定 */
+/* ==================================== */
+body {
+    font-family: 'Hiragino Sans', 'メイリオ', Meiryo, sans-serif;
+    margin: 0;
+    padding: 0; /* body自体のパディングは0にする */
+    background-image: url('images/back.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 50px auto 0;
+    padding: 0 30px; 
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+h1, h2, h3 {
+    color: #008000; 
+    margin-top: 0;
+}
+
+h1{
+    max-width: 1200px;
+    margin: 50px auto 0;
+    background-color: #ffffff;
+    padding: 30px; 
+    border-radius: 12px;
+    box-sizing: border-box;
+}
+
+h2.section-title {
+    text-align: center;
+    padding: 60px 0 30px; 
+    font-size: 2.2em;
+    margin-bottom: 40px; 
+}
+
+/* Moreボタンの共通スタイル */
+.more-button {
+    float: right; 
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: #008000;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    margin-bottom: 15px; 
+    font-weight: bold;
+    clear: right; 
+}
+.more-button:hover {
+    background-color: #006400; 
+}
+
+
+/* ==================================== */
+/* 2. ヘッダー画像とナビゲーションのスタイル */
+/* ==================================== */
+
+/* メインビジュアルの画像スタイル */
+.main-image-content {
+    display: block;
+    width: 100%;
+    max-width: 1200px; /* コンテナ幅に合わせる */
+    height: auto;
+    object-fit: cover;
+    margin: 0 auto 60px auto; /* 左右中央寄せと、下部にコンテナとの隙間 */
+}
+
+/* ナビゲーション用のヘッダー (後でメニューを配置する場所) */
+.navigation-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 40px; 
+    /* 必要に応じて、z-indexやposition: sticky; を設定してください */
+}
+
+/* H1要素を視覚的に非表示にするスタイル */
+
+
+/* ==================================== */
+/* 3. 注意書き (disclaimer-note) のスタイル */
+/* ==================================== */
+.disclaimer-wrapper {
+    max-width: 1200px; /* ★ここで幅を制限 */
+    margin: 100px auto;  /* ★左右autoで中央に寄せる */
+    padding: 0 30px;    /* 画面が狭い時のための左右余白 */
+    box-sizing: border-box;
+}
+
+.disclaimer-note {
+    background-color: #fff3e0;
+    border: 2px solid #ffcc80;
+    padding: 20px;
+    border-radius: 8px;
+    /* margin-top: 100px; は不要なら削るか調整してください */
+}
+
+.disclaimer-note h3 {
+    color: #e65100;
+    margin-top: 0;
+    text-align: center;
+}
+
+
+/* ==================================== */
+/* 4. MAPセクション */
+/* ==================================== */
+
+/* セクション全体を包んで背景画像を敷く（横幅100%） */
+.map-section-wrapper {
+    width: 100%;
+    margin: 60px 0;
+    padding: 80px 0;
+    background-image: url('images/back-2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+
+    /* 上下を波型にカットする設定 */
+    clip-path: polygon(
+        0% 2%, 3% 1.2%, 6% 0.5%, 9% 0.1%, 12.5% 0%, 16% 0.1%, 19% 0.5%, 22% 1.2%, 25% 2%, 28% 2.8%, 31% 3.5%, 34% 3.9%, 37.5% 4%, 41% 3.9%, 44% 3.5%, 47% 2.8%, 50% 2%, 53% 1.2%, 56% 0.5%, 59% 0.1%, 62.5% 0%, 66% 0.1%, 69% 0.5%, 72% 1.2%, 75% 2%, 78% 2.8%, 81% 3.5%, 84% 3.9%, 87.5% 4%, 91% 3.9%, 94% 3.5%, 97% 2.8%, 100% 2%, 
+        100% 98%, 97% 97.2%, 94% 96.5%, 91% 96.1%, 87.5% 96%, 84% 96.1%, 81% 96.5%, 78% 97.2%, 75% 98%, 72% 98.8%, 69% 99.5%, 66% 99.9%, 62.5% 100%, 59% 99.9%, 56% 99.5%, 53% 98.8%, 50% 98%, 47% 97.2%, 44% 96.5%, 41% 96.1%, 37.5% 96%, 34% 96.1%, 31% 96.5%, 28% 97.2%, 25% 98%, 22% 98.8%, 19% 99.5%, 16% 99.9%, 12.5% 100%, 9% 99.9%, 6% 99.5%, 3% 98.8%, 0% 98%
+    );
+
+    /* 波の端が切れないように少し余白を調整 */
+    margin: 40px 0;
+}
+
+/* レイアウトを中央に寄せるための設定 */
+.map-layout {
+    max-width: 1200px; /* 他のパーツと幅を揃える */
+    margin: 0 auto 100px; 
+    display: flex;
+    gap: 40px; 
+    flex-wrap: wrap; 
+    padding: 0 30px; /* 左右の余白 */
+    box-sizing: border-box;
+}
+
+/* --- ここから下は、あなたが元々持っていたコードと同じです --- */
+
+.map-area {
+    flex: 1.5; 
+    min-width: 300px;
+    border-radius: 5px;
+}
+
+.map-detail-panel-wrapper {
+    flex: 1.5; 
+    min-width: 280px;
+    display: flex;
+    flex-direction: column;
+    align-self: stretch; 
+}
+/* ... 以降の .map-detail-panel や .pin-icon などの記述をそのまま続ける ... */
+
+
+.map-detail-panel {
+    background-color: white;
+    height: 600px;           /* デフォルトの高さ */
+    max-height: 85vh;        /* ★画面の高さの85%までに制限（小さくなってもはみ出さない） */
+    padding: 20px 80px; 
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    position: relative; 
+    display: flex;           /* 縦に並べる設定 */
+    flex-direction: column;  /* 縦方向に配置 */
+    overflow: hidden;        /* ★パネル自体はスクロールさせない */
+}
+
+/* ナビゲーションボタンの位置 */
+.map-nav-inner {
+    position: absolute; 
+    top: 50%; 
+    transform: translateY(-50%);
+    width: calc(100% - 140px); 
+    left: 70px; 
+    pointer-events: none; 
+    z-index: 100;
+    background: transparent; 
+}
+
+.map-nav-inner button {
+    position: absolute;
+    top: 0;
+    background: transparent; 
+    border: none;
+    color: #008000; 
+    font-size: 3em; 
+    cursor: pointer;
+    padding: 0 10px;
+    height: 60px;
+    line-height: 60px;
+    transition: color 0.2s, text-shadow 0.2s;
+    font-weight: bold;
+    pointer-events: auto; 
+    border-radius: 4px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.8), -1px -1px 2px rgba(255, 255, 255, 0.8);
+}
+.map-nav-inner button:hover {
+    color: #006400; 
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.9), -1px -1px 3px rgba(255, 255, 255, 0.9);
+}
+#prev-kinoko {
+    left: -60px; 
+}
+#next-kinoko {
+    right: -60px; 
+}
+
+
+.map-container {
+    position: relative; 
+    width: fit-content; 
+    max-width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.map-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* ピンの見た目 */
+.pin-wrapper {
+    position: absolute;
+}
+
+.pin-icon {
+    display: block;
+    width: 25px;
+    height: 25px;
+    background-image: url('images/mark1.png');
+    background-size: contain; 
+    background-repeat: no-repeat;
+    cursor: pointer;
+    transition: transform 0.2s,;
+    z-index: 10;
+}
+.pin-icon.active {
+    transform: translateY(-8px); 
+    background-image: url('images/mark2.png'); 
+}
+
+.pin-detail-view {
+    position: static;        /* 親のflexを活かす */
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.pin-detail-view h3 {
+    text-align: center;
+    font-size: 1.5em; 
+    margin-top: 5px;
+    margin-bottom: 10px;
+    color: #008000;
+}
+
+/* 初期状態のタイトルだけに適用 */
+.map-detail-panel > h3 {
+    margin-top: 40px; /* 初期表示時のみさらに広く */
+}
+
+h4 {
+    margin-top: 15px;    /* 50pxから15pxに大幅カット */
+    margin-bottom: 5px;
+    font-size: 1em;      /* 少し小さく */
+}
+
+/* ガイドメッセージ（地図の下のテキスト）のスタイル */
+.guide-message {
+    margin-top: 60px;
+}
+
+/* 詳細パネル内の画像サイズ縮小 */
+.popup-image {
+    max-width: 45%; 
+    height: auto;
+    border-radius: 4px;
+    margin: 5px auto; 
+    display: block;
+}
+
+.detail-description-wrapper {
+    flex-grow: 1;            /* 余ったスペースを全部使う */
+    overflow-y: auto;        /* ★文章が長い時だけ、ここがスクロールする */
+    margin-bottom: 70px;     /* ボタンと重ならないように下に隙間を空ける */
+    padding-right: 10px;     /* スクロールバー用の余白 */
+}
+
+/* Moreボタン（詳細パネル内）を絶対位置で固定 */
+.pin-detail-view .more-button {
+    position: absolute;      /* パネルの右下を基準にする */
+    bottom: 25px; 
+    right: 40px;             /* パネルの端から少し離す */
+    z-index: 10;
+    margin: 0;
+}
+
+
+/* 食用タグのスタイル */
+.popup-info p strong {
+    font-weight: bold;
+    font-size: 0.9em; 
+}
+.edible-tag {
+    font-weight: bold; 
+    font-size: 0.8em; 
+    padding: 3px 5px; 
+    border-radius: 3px;
+    color: white;
+    display: inline-block; 
+    transform: translateY(-1px);
+}
+.tag-食 { background-color: #27ae60; }
+.tag-毒 { background-color: #c0392b; }
+.tag-不食 { background-color: #f39c12; }
+.tag-不明 { background-color: #7f8c8d; } 
+
+
+/* ==================================== */
+/* 5. キノコ一覧セクション */
+/* ==================================== */
+.mushroom-list {
+    max-width: 1200px; /* ★ここでも幅を制限 */
+    margin: 0 auto 50px; /* ★中央に寄せる */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 40px; 
+    padding: 20px 30px; /* 左右に30pxの余白 */
+    box-sizing: border-box;
+}
+
+.mushroom-link-wrapper {
+    display: contents; 
+    color: inherit; 
+    text-decoration: none;
+}
+
+.mushroom-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    text-align: center;
+    background-color: white;
+    transition: none; 
+    height: 400px; 
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.card-image-wrapper {
+    width: 100%;
+    height: 250px; 
+    overflow: hidden; 
+}
+
+.mushroom-card img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover; 
+    padding: 0; 
+    transition: transform 0.3s ease-in-out; 
+}
+
+.mushroom-card:hover img {
+    transform: scale(1.1);
+}
+
+.card-content {
+    padding: 10px 15px 15px; 
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+}
+
+.card-content h3 {
+    margin: 0 0 8px 0;
+    font-size: 1.2em;
+}
+
+.card-content p {
+    margin: 4px 0;
+    overflow: hidden; 
+}
+.card-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* ==================================== */
+/* 6. フッターとセパレーターのスタイル */
+/* ==================================== */
+
+.footer-separator {
+    width: 100%;
+    margin: 0 auto; 
+    line-height: 0;
+}
+
+.shadow-image {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+footer {
+    width: 100%;       /* 画面の端から端まで */
+    margin: 0;         /* 余計な余白をカット */
+    padding: 10px 0;   /* 上下のパディング */
+    background-color: #333;
+    color: #ccc;
+    text-align: center;
+}
+
+/* ==================================== */
+/* 7. アニメーション */
+/* ==================================== */
+
+/* --- ふわっと表示される前のアニメーション準備 --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* 少し下に下げておく */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+/* --- クラスがついた時のアニメーション実行 --- */
+.fade-in.is-visible {
+    opacity: 1;
+    transform: translateY(0); /* 元の位置に戻る */
+}
+
+/* ==================================== */
+/* 8. レスポンシブ対応 */
+/* ==================================== */
+@media (max-width: 900px) {
+    .map-layout {
+        flex-direction: column;
+    }
+    
+    .map-detail-panel {
+        height: 500px;       /* 横並びから縦並びに変わった時の高さ */
+        max-height: 70vh;    /* 画面を塞ぎすぎない高さに */
+        padding: 20px 80px;
+    }
+
+    .map-nav-inner {
+        width: calc(100% - 120px);
+        left: 60px;
+    }
+    #prev-kinoko {
+        left: -40px; 
+    }
+    #next-kinoko {
+        right: -40px; 
+    }
+    
+    /* 画面が狭いとき、Moreボタンの固定位置を解除 */
+    .pin-detail-view {
+        padding-bottom: 0; 
+    }
+    .pin-detail-view .more-button {
+        position: absolute;  /* ★スマホサイズでも固定を維持 */
+        bottom: 25px;
+        right: 60px;
+        float: none;
+    }
+    
+    .main-image-content {
+        margin-bottom: 30px; 
+    }
+
+    .navigation-header {
+        padding: 10px 20px;
+    }
+    
+    /* 狭い画面では概説セクションを非表示にする */
+    .pin-detail-view h4,
+    .pin-detail-view p:not(.popup-info p):not(.guide-message) {
+        display: none;
+    }
+
+    /* アクティブ時の跳ねる動きもサイズに合わせて調整 */
+    .pin-icon.active {
+        transform: translateY(-5px); 
+    }
+}
+
