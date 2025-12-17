@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>ヒラタケ 詳細 - きのこ図鑑</title>
+    <link rel="stylesheet" href="detail-17.css">
+</head>
+<body>
+
+<main class="detail-container">
+    <header class="detail-header-row">
+        <h1>ヒラタケ</h1>
+    </header>
+
+    <div class="detail-main-flex">
+        <section class="info-column">
+            <table class="spec-table">
+                <tr><th>分類</th><td>ヒラタケ科／ヒラタケ属</td></tr>
+                <tr><th>時期</th><td>晩秋 〜 春</td></tr>
+                <tr><th>食用</th><td><span class="edible-tag tag-食">食</span></td></tr>
+            </table>
+
+            <div class="feature-text">
+                <h3>特徴</h3>
+                <p>傘は半円形から扇形。表面の色は、初めはほぼ黒→灰色→灰褐色→白色に変化する。</p>
+                <p>切り株などに重なり合って発生する。</p>
+                
+                <div class="memo-area">
+                    <p>西欧ではオイスターマッシュルームの名で好まれている。</p>
+                    <p>優秀な食菌で、広く人工栽培され「しめじ」の名で売られている。</p>
+                </div>
+            </div>
+        </section>
+
+        <aside class="image-column">
+            <img src="images/kinoko_img/zokei_kinoko-17.webp" alt="ヒラタケ1">
+            <img src="images/kinoko_img/zokei_kinoko-18.webp" alt="ヒラタケ2">
+        </aside>
+    </div>
+
+    <section class="growth-process-section">
+        <h2>成長過程</h2>
+        
+        <div class="growth-grid">
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-04sub.webp" alt="ヒラタケ04">
+                <div class="growth-text">
+                    <p><strong>01:</strong> 少し成長したヒラタケの様子</p>
+                    <p>傘の色は黒い</p>
+                </div>
+            </div>
+    
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-05sub.webp" alt="ヒラタケ05">
+                <div class="growth-text">
+                    <p><strong>02:</strong> 翌日、少し成長した様子</p>
+                    <p>かさの色が少し薄くなった</p>
+                    <div class="inline-flex-box">
+                        <img src="images/kinoko_img/zokei_kinoko-20.webp" alt="ヒダ綺麗">
+                        <span>別の場所でとれたものはヒダが美しく整っていて食べごろ</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-06sub.webp" alt="ヒラタケ06">
+                <div class="growth-text">
+                    <p><strong>03:</strong> 3日後、全体的に大きくなり、色も白くなった</p>
+                    <p>周りにもたくさん生えている</p>
+                </div>
+            </div>
+    
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-07sub.webp" alt="ヒラタケ07">
+                <div class="growth-text">
+                    <p><strong>04:</strong> さらに大きくなり、傘の縁が波打っている</p>
+                    <div class="inline-flex-box">
+                        <img src="images/kinoko_img/zokei_kinoko-21.webp" alt="胞子">
+                        <span>傘の下に見える白い粒は胞子の影響</span>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-08sub.webp" alt="ヒラタケ08">
+                <div class="growth-text"><p><strong>05:</strong> 老菌で、傘の縁が波打っている</p></div>
+            </div>
+            <div class="growth-item">
+                <img src="images/kinoko_img/hiratake/hiratake-09sub.webp" alt="ヒラタケ09">
+                <div class="growth-text"><p><strong>06:</strong> 01から2週間後、乾燥が進み、収縮した老菌</p>
+                <p>黄色くなり、倒れている</p></div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<div class="outer-nav-wrapper">
+    <a href="index.html" class="back-link">＜ トップページに戻る</a>
+</div>
+
+<div class="footer-separator">
+    <img src="images/kinoko_shadow.png" alt="キノコの影の区切り線" class="shadow-image">
+</div>
+<footer>
+    <p>&copy; 2025 Tokyo Zokei University Kinoko Map Project</p>
+</footer>
+
+<script>
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('show');
+            }
+        });
+    }, { threshold: 0.1 });
+
+    // 見出し(h2)と各アイテムを監視対象にする
+    const targets = document.querySelectorAll('.growth-process-section h2, .growth-item');
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+</script>
+
+</body>
+</html>
+
