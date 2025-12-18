@@ -92,6 +92,47 @@
             </div>
         </div>
     </section>
+
+    <section class="recipe-section">
+        <h2 class="recipe-title">きのこレシピ</h2>
+        
+        <div class="recipe-container">
+            <div class="recipe-header">
+                <h3>ひらたけのバター醤油パスタ</h3>
+            </div>
+            
+            <div class="recipe-content">
+                <div class="recipe-info">
+                    <h4>材料（1人分）</h4>
+                    <ul class="ingredients-list">
+                        <li>パスタ <span>100g</span></li>
+                        <li>冷凍ひらたけ <span>120〜150g</span></li>
+                        <li>バター <span>10g</span></li>
+                        <li>醤油 <span>小さじ1と1/2</span></li>
+                        <li>塩コショウ <span>少々</span></li>
+                        <li>小口ねぎ <span>（あれば）</span></li>
+                    </ul>
+                </div>
+    
+                <div class="recipe-steps">
+                    <h4>作り方</h4>
+                    <ol>
+                        <li>パスタを袋の表示通りにゆでる。</li>
+                        <li>フライパンにバターを熱し、凍ったままのひらたけを炒める。</li>
+                        <li>醤油を回し入れ、ゆで上がったパスタを加えて塩コショウで味を調える。</li>
+                        <li>器に盛り小口ねぎを散らしたら、完成！</li>
+                    </ol>
+                </div>
+            </div>
+    
+            <div class="recipe-images">
+                <div class="main-recipe-img">
+                    <img src="images/kinoko_img/hiratake/recipe-04.webp" alt="完成：バター醤油パスタ">
+                </div>
+            </div>
+        </div>
+    </section>
+    
 </main>
 
 <div class="outer-nav-wrapper">
@@ -114,8 +155,8 @@
         });
     }, { threshold: 0.1 });
 
-    // 見出し(h2)と各アイテムを監視対象にする
-    const targets = document.querySelectorAll('.growth-process-section h2, .growth-item');
+    // 監視対象にレシピコンテナを追加
+    const targets = document.querySelectorAll('.growth-process-section h2, .growth-item, .recipe-title, .recipe-container');
     targets.forEach(target => {
         observer.observe(target);
     });
