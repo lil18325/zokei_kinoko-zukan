@@ -43,23 +43,23 @@ const MAX_INDEX = 17;
 let currentIndex = 0; 
 
 const PIN_LOCATIONS = {
-    'kinoko-01': { top: '68%', left: '63%' }, 
-    'kinoko-02': { top: '73%', left: '65%' }, 
-    'kinoko-03': { top: '70%', left: '68%' }, 
-    'kinoko-04': { top: '60%', left: '66%' }, 
-    'kinoko-05': { top: '56%', left: '74%' }, 
-    'kinoko-06': { top: '57%', left: '71%' }, 
-    'kinoko-07': { top: '49%', left: '65%' }, 
-    'kinoko-08': { top: '52%', left: '67%' }, 
-    'kinoko-09': { top: '41%', left: '41%' }, 
-    'kinoko-10': { top: '35%', left: '44%' }, 
-    'kinoko-11': { top: '23%', left: '70%' }, 
-    'kinoko-12': { top: '26%', left: '65%' }, 
-    'kinoko-13': { top: '19%', left: '68%' }, 
-    'kinoko-14': { top: '31%', left: '40%' }, 
-    'kinoko-15': { top: '54%', left: '80%' }, 
-    'kinoko-16': { top: '32%', left: '37%' }, 
-    'kinoko-17': { top: '22%', left: '67%' }
+    'kinoko-01': { top: '71%', left: '64%' }, 
+    'kinoko-02': { top: '76%', left: '66%' }, 
+    'kinoko-03': { top: '73%', left: '69%' }, 
+    'kinoko-04': { top: '63%', left: '67%' }, 
+    'kinoko-05': { top: '59%', left: '75%' }, 
+    'kinoko-06': { top: '60%', left: '72%' }, 
+    'kinoko-07': { top: '52%', left: '66%' }, 
+    'kinoko-08': { top: '55%', left: '68%' }, 
+    'kinoko-09': { top: '44%', left: '42%' }, 
+    'kinoko-10': { top: '38%', left: '45%' }, 
+    'kinoko-11': { top: '26%', left: '71%' }, 
+    'kinoko-12': { top: '29%', left: '66%' }, 
+    'kinoko-13': { top: '22%', left: '69%' }, 
+    'kinoko-14': { top: '34%', left: '41%' }, 
+    'kinoko-15': { top: '57%', left: '81%' }, 
+    'kinoko-16': { top: '35%', left: '38%' }, 
+    'kinoko-17': { top: '25%', left: '68%' }
 };
 
 // ====================================
