@@ -300,13 +300,6 @@ body {
     justify-content: center;
 }
 
-.prep-note {
-    text-align: center;
-    margin-top: 30px;
-    font-size: 0.9rem;
-    font-weight: bold;
-}
-
 /* --- アニメーション設定 --- */
 .prep-title, .prep-step {
     opacity: 0;
