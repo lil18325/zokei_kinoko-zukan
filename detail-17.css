@@ -201,6 +201,141 @@ body {
     flex: 1;
 }
 
+/* --- 下処理・保存セクションのスタイル --- */
+.prep-section {
+    margin-top: 100px;
+    margin-bottom: 50px;
+}
+
+.prep-title {
+    text-align: center;
+    font-size: 1.8em;
+    color: #008000;
+    margin-bottom: 40px;
+}
+
+.prep-container {
+    background-color: #fff9f0;
+    border: 1px solid #e0eee0;
+    border-radius: 12px;
+    padding: 40px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.prep-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    align-items: stretch; /* カードの高さを揃える */
+}
+
+.prep-step {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden; /* 画像の角をカードに合わせる */
+}
+
+/* 番号と見出しを横並びにするエリア */
+.step-header {
+    display: flex;
+    align-items: center; /* 垂直中央揃え */
+    gap: 12px;           /* 番号と文字の間の隙間 */
+    margin-bottom: 0;
+}
+
+.step-num {
+    flex-shrink: 0;      /* 丸が潰れないように固定 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background-color: #008000;
+    color: #fff;
+    border-radius: 50%;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
+
+.prep-step h4 {
+    color: #333;
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* テキストコンテンツの余白 */
+.prep-text-content {
+    padding: 15px 20px;
+}
+
+/* 画像エリア（見出しの下、説明の上） */
+.prep-img-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    background-color: #eee;
+}
+
+.prep-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.prep-step p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #666;
+    margin: 0;
+}
+
+/* 画像なしステップ（STEP 4）の特別調整 */
+.no-image-step {
+    border: 1px dashed #cedecd;
+    justify-content: center;
+}
+
+.prep-note {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+/* --- アニメーション設定 --- */
+.prep-title, .prep-step {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.prep-title.show, .prep-step.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 順番にふわっと出す遅延設定 */
+.prep-step:nth-child(1).show { transition-delay: 0.1s; }
+.prep-step:nth-child(2).show { transition-delay: 0.3s; }
+.prep-step:nth-child(3).show { transition-delay: 0.5s; }
+.prep-step:nth-child(4).show { transition-delay: 0.7s; }
+
+/* スマホ対応：画面が狭いときは2列にする */
+@media (max-width: 600px) {
+    .prep-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .prep-container {
+        padding: 20px 15px;
+    }
+}
+
+
 /* --- レシピセクションのスタイル (修正版) --- */
 .recipe-section {
     margin-top: 120px; /* 上の間隔をさらに広く */
